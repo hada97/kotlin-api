@@ -1,4 +1,4 @@
-package br.com.aura.forum
+package br.com.alura.forum
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
