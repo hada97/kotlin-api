@@ -1,65 +1,16 @@
 package br.com.alura.forum.service
 
-import br.com.alura.forum.model.Curso
 import br.com.alura.forum.model.Topico
-import br.com.alura.forum.model.Usuario
+import br.com.alura.forum.model.dto.NovoTopicoDto
 import org.springframework.stereotype.Service
-import java.util.*
+import java.util.ArrayList
 
 @Service
-class TopicoService(private var topicos: List<Topico>) {
-
-    init {
-        val topico = Topico(
-            id = 1,
-            titulo = "Duvida Kotlin",
-            mensagem = "Variaveis no Kotlin",
-            curso = Curso(
-                id = 1,
-                nome = "Kotlin",
-                categoria = "Programacao"
-            ),
-            autor = Usuario(
-                id = 1,
-                nome = "Ana da Silva",
-                email = "ana@email.com"
-            )
-        )
-
-        val topico2 = Topico(
-            id = 2,
-            titulo = "Duvida Kotlin 2",
-            mensagem = "Variaveis no Kotlin 2",
-            curso = Curso(
-                id = 1,
-                nome = "Kotlin",
-                categoria = "Programacao"
-            ),
-            autor = Usuario(
-                id = 1,
-                nome = "Ana da Silva",
-                email = "ana@email.com"
-            )
-        )
-
-        val topico3 = Topico(
-            id = 3,
-            titulo = "Duvida Kotlin 3",
-            mensagem = "Variaveis no Kotlin 3",
-            curso = Curso(
-                id = 1,
-                nome = "Kotlin",
-                categoria = "Programacao"
-            ),
-            autor = Usuario(
-                id = 1,
-                nome = "Ana da Silva",
-                email = "ana@email.com"
-            )
-        )
-
-        topicos = Arrays.asList(topico, topico2, topico3)
-    }
+class TopicoService(
+    private var topicos: List<Topico> = ArrayList(),
+    private val cursoService: CursoService,
+    private val UsuarioService: UsuarioService
+) {
 
     fun listar(): List<Topico> {
         return topicos
@@ -70,4 +21,15 @@ class TopicoService(private var topicos: List<Topico>) {
                 t -> t.id == id
         }).findFirst().get()
     }
+
+    fun cadastrar (dto: NovoTopicoDto) {
+        topicos = topicos.plus(Topico(
+            id = topicos.size.toLong() + 1,
+            titulo =  dto.titulo,
+            mensagem = dto.mensagem,
+            curso = cursoService.buscarPorId(dto.idCurso),
+            autor = UsuarioService.buscarPorId(dto.idAutor)
+        ))
+    }
+
 }
