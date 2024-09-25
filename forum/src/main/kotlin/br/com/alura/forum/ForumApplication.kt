@@ -8,7 +8,7 @@ class ForumApplication
 
 fun main(args: Array<String>) {
 	runApplication<ForumApplication>(*args)
-	println("---------------")
-	println("----Rodando----")
-	println("---------------")
+	println("----------------------------")
+	println("----Serviços em execução----")
+	println("----------------------------")
 }
