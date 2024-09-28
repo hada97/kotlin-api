@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service
 class CursoService (private val repository: CursoRepository) {
 
     fun buscarPorId(id: Long): Curso {
-        return repository.getOne(id)
+        return repository.getReferenceById(id)
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 class UsuarioService (private val repository: UsuarioRepository) {
 
     fun buscarPorId(id: Long): Usuario {
-        return repository.getOne(id)
+        return repository.getReferenceById(id)
     }
 }
 
