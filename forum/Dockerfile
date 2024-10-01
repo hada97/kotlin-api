@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copie o arquivo de build (JAR) para o contêiner
-COPY target/forum-0.0.1-SNAPSHOT.jar /app/myapp.jar
+COPY target/forum-0.0.1-SNAPSHOT.jar /app/app.jar
 
 # Exponha a porta em que sua API estará rodando
 EXPOSE 8080
