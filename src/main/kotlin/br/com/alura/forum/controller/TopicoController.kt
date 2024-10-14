@@ -69,6 +69,7 @@ class TopicoController(private val service: TopicoService) {
     }
 
     @GetMapping("/relatorio")
+    @Cacheable
     fun relatorio(): List<TopicoPorCategoriaDto> {
         return service.relatorio()
     }
