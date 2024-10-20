@@ -30,14 +30,39 @@ O projeto utiliza as seguintes tecnologias:
 
 ## 📝 Licença
 
-Este projeto é licenciado sob a Licença Aberta.
+Este projeto é licenciado sob a licença MIT.
 
 ## 🚀 Como Começar
 
 Para começar a utilizar este projeto, siga as etapas abaixo:
 
+
 1. Clone o repositório:
     ```bash
     git clone https://github.com/hada97/kotlin-api
+    ```
+
+2. **Navegue até o diretório do projeto**:
+    ```bash
+    cd kotlin-api
+    ```
+
+3. **Compile e execute o projeto**:
+    ```bash
+    mvn clean install
+
+    ```
+
+4. **Acesse a API**: Após iniciar o projeto, a API estará disponível na URL padrão:
+    ```bash
+    http://localhost:8080
+
+    ```
+
+
+6. **Acesse o Swagger**:
+   ```bash
+    http://localhost:8080/swagger-ui/index.html
+
     ```
 
