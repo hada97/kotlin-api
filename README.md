@@ -4,7 +4,7 @@
 
 Esta é uma API Rest desenvolvida em kotlin que implementa as operações básicas de CRUD (Create, Read, Update, Delete) de tópicos.
 
-[Veja como ficou!](https://apikotlin-latest.onrender.com/swagger-ui/index.html)
+[Veja como ficou!](https://api-kotlin-b0dnd2fjckfqagc0.canadacentral-01.azurewebsites.net/swagger-ui/index.html)
 
 
 ## ⚙️ Funcionalidades
